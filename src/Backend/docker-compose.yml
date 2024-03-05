@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  fastapi:
+    container_name: fastapi
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MAIN_SERVER_HOST=0.0.0.0
+      - MAIN_DEPOSITS_SETTINGS__MAX_PERIOD=60
+      - MAIN_DEPOSITS_SETTINGS__MIN_PERIOD=1
+      - MAIN_DEPOSITS_SETTINGS__MAX_AMOUNT=1000000
+      - MAIN_DEPOSITS_SETTINGS__MIN_AMOUNT=10000
+      - MAIN_DEPOSITS_SETTINGS__MAX_RATE=8
+      - MAIN_DEPOSITS_SETTINGS__MIN_RATE=1
+
+
+    command: python src/Backend/start.py
+    restart: always

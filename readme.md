@@ -1,13 +1,23 @@
 # Быстрый старт
 
 ## Docker
-
+```bash 
+docker compose build
+docker compose up
+```
 
 ## Локальная
+### Установка
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+### Запуск сервера
 ```bash
 python src/Backend/start.py
 ```
-## или
+### или
 ```bash
 cd src/Backend
 python -m app 
