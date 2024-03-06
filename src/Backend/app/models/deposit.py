@@ -8,7 +8,7 @@ from ..settings import settings
 
 
 class Deposit(BaseModel):
-    st_date: date = Field(alias='date', examples=["13.01.1998"]) # документация https://docs.pydantic.dev/latest/concepts/fields/
+    st_date: date = Field(alias='date', examples=["13.01.1998"])
     period: int = Field(alias='period', examples=[1, 60])
     amount: float = Field(alias='amount', examples=[10000, 1000000])
     rate: float = Field(alias='rate', examples=[6, 8])
@@ -51,7 +51,7 @@ class Deposit(BaseModel):
 
 
 
-    @field_validator('st_date',mode='before') # документация https://docs.pydantic.dev/latest/concepts/validators/
+    @field_validator('st_date',mode='before')
     def date_validator(cls, v):
         try:
             return datetime.strptime(v, "%d.%m.%Y").date()

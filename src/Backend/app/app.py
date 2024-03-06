@@ -12,7 +12,7 @@ app = FastAPI(
 app.include_router(router)
 
 
-@app.exception_handler(RequestValidationError)  # читать тут https://fastapi.tiangolo.com/tutorial/handling-errors/
+@app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request, exc):
     return JSONResponse(
         status_code=status.HTTP_400_BAD_REQUEST,

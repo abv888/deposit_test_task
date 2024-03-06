@@ -1,5 +1,5 @@
 import pytest
-from fastapi.testclient import TestClient # документация https://fastapi.tiangolo.com/ru/reference/testclient/?h=test
+from fastapi.testclient import TestClient
 from src.Backend.app.settings import settings
 from src.Backend.app.app import app
 
