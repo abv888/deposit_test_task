@@ -18,7 +18,7 @@ python -m app
 ```bash
 pytest
 ```
-### Запуск тестов с показом покрытием
+### Запуск тестов с показом покрытия
 ```bash
 pytest --cov= src/Backend/tests/ 
 ```
